@@ -9,17 +9,17 @@ import Foundation
 import UIKit
 
 class DynamicImageView: UIImageView {
-    let imageCache = ImageCache()
+   static let imageCache = ImageCache()
     
-    func addImage(_ url:String?,_ placeHolder: UIImage){
+    func addImage(_ url:String?,_ placeHolder: UIImage,completionHandler:@escaping ()->()){
         if let unwrap = url{
-            downloaded(from: unwrap)
+            downloaded(from: unwrap,completionHandler: completionHandler)
         }else{
             self.image = placeHolder
         }
     }
     
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFill,urlString:String = "") {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFill,urlString:String = "",completionHandler:@escaping ()->()) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
@@ -30,17 +30,18 @@ class DynamicImageView: UIImageView {
                 else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
-                self?.imageCache.set(forKey: urlString, image: image)
+                DynamicImageView.imageCache.set(forKey: urlString, image: image)
+                completionHandler()
             }
         }.resume()
     }
     
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFill) {
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFill,completionHandler:@escaping ()->()) {
         guard let url = URL(string: link) else { return }
-        if let image = imageCache.get(forKey: link){
+        if let image = DynamicImageView.imageCache.get(forKey: link){
             self.image = image
         }else{
-            downloaded(from: url, contentMode: mode,urlString: link)
+            downloaded(from: url, contentMode: mode,urlString: link, completionHandler: completionHandler)
         }
         
     }
@@ -51,7 +52,7 @@ class DynamicImageView: UIImageView {
 
 class ImageCache {
     
-    var cache = NSCache<NSString, UIImage>()
+    private var cache = NSCache<NSString, UIImage>()
     
     func get(forKey: String) -> UIImage? {
         return cache.object(forKey: NSString(string: forKey))

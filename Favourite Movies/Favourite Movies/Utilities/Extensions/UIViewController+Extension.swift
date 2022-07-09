@@ -9,6 +9,13 @@ import Foundation
 import UIKit
 
 extension UIViewController{
+    
+    func setNavigationTitle(title:String) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.barStyle = .default
+        self.navigationItem.title = title
+    }
+    
     func showActivityIndicator(show:Bool){
         if !show{
             hideActivityIndicator()

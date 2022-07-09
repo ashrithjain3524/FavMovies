@@ -15,9 +15,35 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="EQE-Po-vyK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Lg8-5T-ELI"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KPL-AB-ra9">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EQE-Po-vyK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3vL-bF-wNu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KPL-AB-ra9" secondAttribute="trailing" id="9PH-f6-nH0"/>
+                            <constraint firstItem="EQE-Po-vyK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GkA-8C-mod"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KPL-AB-ra9" secondAttribute="bottom" id="Tth-Qi-TlO"/>
+                            <constraint firstItem="EQE-Po-vyK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W0z-bS-vgg"/>
+                            <constraint firstItem="KPL-AB-ra9" firstAttribute="top" secondItem="EQE-Po-vyK" secondAttribute="bottom" constant="10" id="pb2-uW-rhX"/>
+                            <constraint firstItem="KPL-AB-ra9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xH4-9q-sx1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieListTable" destination="KPL-AB-ra9" id="9HQ-21-B1L"/>
+                        <outlet property="movieSearchBar" destination="EQE-Po-vyK" id="zX1-6J-faC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,8 +51,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
