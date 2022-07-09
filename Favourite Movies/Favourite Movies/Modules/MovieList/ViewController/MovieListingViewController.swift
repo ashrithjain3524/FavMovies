@@ -18,3 +18,11 @@ class MovieListingViewController: UIViewController {
 
 
 }
+
+extension MovieListingViewController{
+    static func getInstance()->UIViewController{
+        let controller = UIStoryboard.getMainStoryBoard().instantiateViewController(forClass: MovieListingViewController.self)
+        //controller.viewModel = NewsListingViewModel()
+        return controller
+    }
+}
