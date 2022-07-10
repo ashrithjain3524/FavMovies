@@ -11,7 +11,7 @@ extension Constant {
     static let BaseUrl: String = "https://api.themoviedb.org"
     static let APIKey: String = "a44e067afda6c1cf762870050136866f"
     static let ImageBaseUrl: String = "https://image.tmdb.org"
-   // https://image.tmdb.org/t/p/w500/ocUp7DJBIc8VJgLEw1prcyK1dYv.jpg
+    // https://image.tmdb.org/t/p/w500/ocUp7DJBIc8VJgLEw1prcyK1dYv.jpg
     enum API{
         case movies(page:Int)
         case movieDetail(id:Int)

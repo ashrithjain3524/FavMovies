@@ -11,7 +11,7 @@ import CoreData
 
 @objc(MovieStore)
 public class MovieStore: NSManagedObject {
-
+    
     func getMovieObject()->Movie{
         var movie = Movie()
         movie.id = Int(id)

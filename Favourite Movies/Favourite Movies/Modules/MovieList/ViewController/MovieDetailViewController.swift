@@ -32,7 +32,7 @@ class MovieDetailViewController: UIViewController {
         setUpData()
         viewModel.fetchDetails(id: viewModel.movie.id ?? 0)
     }
-
+    
 }
 
 extension MovieDetailViewController{
@@ -94,7 +94,7 @@ extension MovieDetailViewController{
             }
         }
     }
-
+    
 }
 
 

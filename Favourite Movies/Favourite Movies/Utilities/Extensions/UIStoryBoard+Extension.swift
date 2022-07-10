@@ -14,7 +14,7 @@ extension UIStoryboard{
         case main = "Main"
     }
     class func getMainStoryBoard()->UIStoryboard{
-       return UIStoryboard(name: StoryboardIdentifiers.main.rawValue, bundle: nil)
+        return UIStoryboard(name: StoryboardIdentifiers.main.rawValue, bundle: nil)
     }
     
     func instantiateViewController<T>(withId: String? = nil, forClass: T.Type) -> T {

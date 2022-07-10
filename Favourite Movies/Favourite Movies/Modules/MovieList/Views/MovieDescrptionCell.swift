@@ -22,7 +22,7 @@ class MovieDescrptionCell: UITableViewCell {
         dynamicImageView.addImage(url, UIImage()){
             delegate.onLayoutChangeNeeded()
         }
-       
+        
     }
     
 }

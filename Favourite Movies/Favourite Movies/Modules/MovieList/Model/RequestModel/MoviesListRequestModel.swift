@@ -10,11 +10,11 @@ import Foundation
 class MoviesListRequestModel:RequestModel{
     var page:Int
     
-     init(page:Int) {
-         self.page = page
-     }
+    init(page:Int) {
+        self.page = page
+    }
     
-     override var path: String{
+    override var path: String{
         return Constant.API.movies(page: page).getRawValue()
-     }
+    }
 }

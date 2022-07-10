@@ -7,7 +7,7 @@
 
 import Foundation
 
- struct Movie:Codable {
+struct Movie:Codable {
     var id:Int?
     var mediaType:String?
     var title:String?

@@ -125,7 +125,7 @@ extension MovieListingViewController:UISearchBarDelegate{
     }
     
     func filterMovieList(text:String) -> [Movie] {
-
+        
         let list = viewModel.responseObject?.results ?? []
         guard text != "" else {
             return list

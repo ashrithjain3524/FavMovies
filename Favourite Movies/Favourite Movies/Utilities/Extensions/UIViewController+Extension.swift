@@ -38,7 +38,7 @@ extension UIViewController{
             activityIndicator.centerXAnchor.constraint(equalTo: unwrapedWindow.centerXAnchor).isActive = true
             activityIndicator.startAnimating()
         }
-
+        
         
         
     }
@@ -53,6 +53,6 @@ extension UIViewController{
                 }
             }
         }
-
+        
     }
 }

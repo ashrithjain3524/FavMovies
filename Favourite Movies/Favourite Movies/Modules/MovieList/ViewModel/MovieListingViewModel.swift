@@ -65,7 +65,7 @@ class MovieListingViewModel: BaseViewModel {
             store.setMovieObject(movie: obj)
             PersistanceService.shared.saveContext()
         }
-
+        
     }
     
 }

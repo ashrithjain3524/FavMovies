@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class DynamicImageView: UIImageView {
-   static let imageCache = ImageCache()
+    static let imageCache = ImageCache()
     
     func addImage(_ url:String?,_ placeHolder: UIImage,completionHandler:@escaping ()->()){
         if let unwrap = url{
@@ -27,7 +27,7 @@ class DynamicImageView: UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-                else { return }
+            else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
                 DynamicImageView.imageCache.set(forKey: urlString, image: image)
@@ -61,5 +61,5 @@ class ImageCache {
     func set(forKey: String, image: UIImage) {
         cache.setObject(image, forKey: NSString(string: forKey))
     }
-
+    
 }

@@ -10,11 +10,11 @@ import Foundation
 class MovieDetailRequestModel:RequestModel{
     var movieId:Int
     
-     init(movieId:Int) {
-         self.movieId = movieId
-     }
+    init(movieId:Int) {
+        self.movieId = movieId
+    }
     
-     override var path: String{
+    override var path: String{
         return Constant.API.movieDetail(id: movieId).getRawValue()
-     }
+    }
 }
