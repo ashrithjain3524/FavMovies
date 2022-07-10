@@ -64,7 +64,7 @@ extension MovieListingViewController{
     }
 }
 
-extension MovieListingViewController:UITableViewDataSource,UITableViewDelegate,CellUpdate{
+extension MovieListingViewController:UITableViewDataSource,CellUpdate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.movieList.count
     }
@@ -80,6 +80,14 @@ extension MovieListingViewController:UITableViewDataSource,UITableViewDelegate,C
     func onLayoutChangeNeeded() {
         movieListTable.beginUpdates()
         movieListTable.endUpdates()
+    }
+}
+
+extension MovieListingViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = self.viewModel.movieList[indexPath.row]
+        let detailController = MovieDetailViewController.getInstance(movie: movie)
+        self.navigationController?.pushViewController(detailController, animated: true)
     }
 }
 

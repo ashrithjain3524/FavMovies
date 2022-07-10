@@ -24,7 +24,7 @@ extension Constant {
                 return rawValue
             case .movieDetail(let id):
                 var rawValue =  BaseAPI.movieDetail.rawValue
-                rawValue = rawValue + "/\(id)/images?api_key=\(Constant.APIKey)"
+                rawValue = rawValue + "/\(id)?api_key=\(Constant.APIKey)"
                 return rawValue
             case .image(let width,let path):
                 var rawValue =  BaseAPI.image.rawValue

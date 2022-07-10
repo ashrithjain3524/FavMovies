@@ -16,6 +16,12 @@ extension UIViewController{
         self.navigationItem.title = title
     }
     
+    func setNavigationBackButtonTitle(title:String){
+        let backButton = UIBarButtonItem()
+        backButton.title = title
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
     func showActivityIndicator(show:Bool){
         if !show{
             hideActivityIndicator()

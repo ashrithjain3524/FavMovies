@@ -13,18 +13,5 @@ struct MovieList:Codable {
     var results:[Movie]?
 }
 
-struct Movie:Codable {
-    var id:Int?
-    var mediaType:String?
-    var title:String?
-    var rating:Double?
-    var poster:String?
-    
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case mediaType = "media_type"
-        case title
-        case rating = "vote_average"
-        case poster = "poster_path"
-    }
-}
+
+
