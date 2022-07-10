@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC12E900287AF1DB004614B6 /* MovieDataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC12E8FF287AF1DB004614B6 /* MovieDataBaseManager.swift */; };
 		CC6997DE2879490400D1320A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6997DD2879490400D1320A /* AppDelegate.swift */; };
 		CC6997E02879490400D1320A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6997DF2879490400D1320A /* SceneDelegate.swift */; };
 		CC6997E52879490400D1320A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6997E32879490400D1320A /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		CC8B69CE287A85F50099FAF6 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8B69CD287A85F50099FAF6 /* MovieDetails.swift */; };
 		CC8B69D3287AAE490099FAF6 /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8B69D2287AAE490099FAF6 /* InternetConnectionManager.swift */; };
 		CC8B69E5287AB2AF0099FAF6 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8B69E4287AB2AF0099FAF6 /* PersistanceService.swift */; };
+		CC8B6A14287ACA020099FAF6 /* MovieStore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8B6A12287ACA020099FAF6 /* MovieStore+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC12E8FF287AF1DB004614B6 /* MovieDataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataBaseManager.swift; sourceTree = "<group>"; };
 		CC6997DA2879490400D1320A /* Favourite Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Favourite Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6997DD2879490400D1320A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC6997DF2879490400D1320A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		CC8B69CD287A85F50099FAF6 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		CC8B69D2287AAE490099FAF6 /* InternetConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionManager.swift; sourceTree = "<group>"; };
 		CC8B69E4287AB2AF0099FAF6 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
+		CC8B6A12287ACA020099FAF6 /* MovieStore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieStore+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				CC6998822879BB3F00D1320A /* MovieServiceManager.swift */,
+				CC12E8FF287AF1DB004614B6 /* MovieDataBaseManager.swift */,
 			);
 			path = ServiceManager;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 		CC6998812879BA9D00D1320A /* ResponseModel */ = {
 			isa = PBXGroup;
 			children = (
+				CC8B6A12287ACA020099FAF6 /* MovieStore+CoreDataClass.swift */,
 				CC69987C2879B86300D1320A /* MovieList.swift */,
 				CC8B69CD287A85F50099FAF6 /* MovieDetails.swift */,
 			);
@@ -485,6 +491,7 @@
 				CC69983528794FBD00D1320A /* UIViewController+Extension.swift in Sources */,
 				CC69983A2879504900D1320A /* String+Extension.swift in Sources */,
 				CC69986B2879538700D1320A /* Constant.swift in Sources */,
+				CC8B6A14287ACA020099FAF6 /* MovieStore+CoreDataClass.swift in Sources */,
 				CC8B69C9287A84FB0099FAF6 /* MovieDetailRequestModel.swift in Sources */,
 				CC8B69E5287AB2AF0099FAF6 /* PersistanceService.swift in Sources */,
 				CC6998A22879D69700D1320A /* MovieDetailViewController.swift in Sources */,
@@ -503,6 +510,7 @@
 				CC6998402879509E00D1320A /* DynamicImageView.swift in Sources */,
 				CC6997DE2879490400D1320A /* AppDelegate.swift in Sources */,
 				CC6997E02879490400D1320A /* SceneDelegate.swift in Sources */,
+				CC12E900287AF1DB004614B6 /* MovieDataBaseManager.swift in Sources */,
 				CC8B69D3287AAE490099FAF6 /* InternetConnectionManager.swift in Sources */,
 				CC69982D28794F7100D1320A /* UIStoryBoard+Extension.swift in Sources */,
 				CC6998A72879D6C700D1320A /* MovieDetailViewModel.swift in Sources */,

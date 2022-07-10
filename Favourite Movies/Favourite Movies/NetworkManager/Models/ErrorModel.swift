@@ -11,4 +11,5 @@ enum ErrorModel:Error {
     case BadUrl
     case Nodata
     case DecodingError
+    case NoInterNet
 }

@@ -46,10 +46,30 @@ extension MovieListingViewController{
             
         }
         
-        viewModel.showErrorPopUp.bind(listener: { (value) in
-            
+        viewModel.errorPop.bind(listener: { [weak self](value) in
+            switch value{
+            case .NoInterNet:
+                self?.showAlert()
+                break
+            default:
+                break
+            }
         })
         
+    }
+    
+    func showAlert(){
+        let dialogMessage = UIAlertController(title: "No Internet", message: "It seems you are not connected to any internet", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "Retry", style: .default, handler: { (action) -> Void in
+            self.viewModel.fetchMovieList(page: 1)
+        })
+        let cancel = UIAlertAction(title: "Offline Mode", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
+        }
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        self.present(dialogMessage, animated: true, completion: nil)
     }
     
     func setUpView(){
@@ -58,7 +78,6 @@ extension MovieListingViewController{
         self.movieListTable.delegate = self
         self.movieListTable.dataSource = self
         movieListTable.register(UINib(nibName: "MovieDescrptionCell", bundle: nil), forCellReuseIdentifier: "MovieDescrptionCell")
-        //movieListTable.contentInsetAdjustmentBehavior = .never
         movieListTable.rowHeight = UITableView.automaticDimension
         movieListTable.estimatedRowHeight = UITableView.automaticDimension
     }

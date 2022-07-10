@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Movie:NSObject,Codable {
+ struct Movie:Codable {
     var id:Int?
     var mediaType:String?
     var title:String?
@@ -67,13 +67,13 @@ public class Movie:NSObject,Codable {
     
 }
 
-class Generes:NSObject,Codable {
+struct Generes:Codable {
     var id:Int?
     var name:String?
     
 }
 
-class Languages:NSObject,Codable {
+struct Languages:Codable {
     var englishName:String?
     var iso:String?
     var name:String?

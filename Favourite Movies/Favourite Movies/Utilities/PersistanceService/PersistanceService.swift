@@ -85,7 +85,7 @@ class PersistanceService {
     
     func delete(_ object: NSManagedObject) {
         context.delete(object)
-        self.saveContext()
+        print("******deleted******")
     }
 }
 
